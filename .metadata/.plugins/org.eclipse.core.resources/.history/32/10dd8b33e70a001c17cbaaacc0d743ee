@@ -1,0 +1,13 @@
+package com.manytoone;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="library400")
+public class Library {
+
+	
+	
+	
+}

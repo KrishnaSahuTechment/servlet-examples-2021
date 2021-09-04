@@ -1,0 +1,53 @@
+package com.onetomany;
+
+import java.util.ArrayList;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="student300")
+public class Student {
+
+	@Id
+	int id;
+	String name;
+	
+	@OneToMany
+	ArrayList<Course> course;
+	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public ArrayList<Course> getCourse() {
+		return course;
+	}
+	public void setCourse(ArrayList<Course> course) {
+		this.course = course;
+	}
+	public Student() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Student(int id, String name, ArrayList<Course> course) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.course = course;
+	}
+	
+	
+	
+}

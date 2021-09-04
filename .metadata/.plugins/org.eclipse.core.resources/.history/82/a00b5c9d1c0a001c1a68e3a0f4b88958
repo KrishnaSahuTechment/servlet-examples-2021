@@ -1,0 +1,27 @@
+package com.techment;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+public class ClientFind {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		EntityManagerFactory emf =Persistence.createEntityManagerFactory("s");
+		EntityManager em = emf.createEntityManager();
+		
+		em.getTransaction().begin();
+		
+		Query query = em.createQuery("SELECT FROM Product p WHERE p.id = :productid");
+		query.setParameter("productid",1);
+		int rowsshow = query.executeUpdate();
+        System.out.println("entities shows: " + rowsshow);
+        em.getTransaction().commit();
+        em.close();
+		
+	}
+
+}

@@ -1,0 +1,10 @@
+package com.techment;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+public class MySqlDemo {
+
+	JdbcTemplate jt;
+	
+	
+}

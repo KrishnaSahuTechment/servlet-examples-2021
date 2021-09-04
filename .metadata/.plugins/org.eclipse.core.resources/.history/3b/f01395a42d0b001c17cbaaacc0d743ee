@@ -1,0 +1,12 @@
+package com.techment.assignment1;
+
+public class Snippet {
+	public static void main(String[] args) {
+		System.out.println("Auther Id: "+a.getAutherId());
+				System.out.println("Auther firsName: "+a.getFisrtName());
+				System.out.println("Auther middleName "+a.getMiddleName());
+				System.out.println("Auther lastName: "+a.getLastName());
+				System.out.println("Auther phone No: "+a.getPhoneNo());
+	}
+}
+

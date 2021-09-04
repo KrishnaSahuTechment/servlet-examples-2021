@@ -1,0 +1,21 @@
+package com.testbook;
+
+import java.util.Set;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity  
+@Table(name="liabrary200")
+public class Liabrary {
+
+	@Id
+	int id;
+	
+	
+	
+	@OneToMany
+	Set<Book> books;
+}

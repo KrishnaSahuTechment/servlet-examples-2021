@@ -1,0 +1,17 @@
+package com.techment;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+public class ProductDescription {
+
+	@Table(name="product500")
+	@Entity
+	private boolean durable;
+	private boolean waterProoff;
+	private int quantity;
+	
+	
+	
+	
+}

@@ -1,0 +1,65 @@
+package com.testbook;
+
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity  
+@Table(name="liabrary200")
+public class Liabrary {
+
+	@Id
+	int liabraryId;
+	
+	
+	
+	@OneToMany(mappedBy = "liabrary",cascade = CascadeType.ALL)  // bi-directional 
+	Set<Book> books;
+
+
+
+	public Liabrary() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+	public Liabrary(int liabraryId, Set<Book> books) {
+		super();
+		this.liabraryId = liabraryId;
+		this.books = books;
+	}
+
+
+
+	public int getLiabraryId() {
+		return liabraryId;
+	}
+
+
+
+	public void setLiabraryId(int liabraryId) {
+		this.liabraryId = liabraryId;
+	}
+
+
+
+	public Set<Book> getBooks() {
+		return books;
+	}
+
+
+
+	public void setBooks(Set<Book> books) {
+		this.books = books;
+	}
+	
+	
+	
+	
+}

@@ -1,0 +1,31 @@
+package com.techment;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+public class ClientUpdate {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		EntityManagerFactory emf =Persistence.createEntityManagerFactory("s");
+		EntityManager em = emf.createEntityManager();
+		
+		em.getTransaction().begin();
+		
+		System.out.println("-- Update query --");
+		
+		 Query query = em.createQuery("UPDATE Product p SET p.price = e.price + :increment"
+	              + "WHERE p.category = :category");
+	      query.setParameter("increment", 1000);
+	      query.setParameter("category ", "Electronics");
+	      int rowsUpdated = query.executeUpdate();
+	      System.out.println("entities Updated: " + rowsUpdated);
+	      em.getTransaction().commit();
+	      em.close();
+		
+	}
+
+}

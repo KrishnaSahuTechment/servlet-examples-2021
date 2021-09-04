@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+<bean id="id1" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+  <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+  <property name="url" value="jdbc:mysql://localhost:3306/trainticket?autoReconnect=true&useSSL=false"/>
+  <property name="username" value="root"/>
+  <property name="password" value="root"/>
+</bean>
+
+<bean id="id2" class="org.springframework.jdbc.core.JdbcTemplate">
+  <constructor-arg>
+      <ref bean="id1"/>
+  </constructor-arg>
+</bean>
+
+<bean id="id3" class="java4s.SpringJdbcCreateTable">
+  <property name="jt">
+     <ref bean="id2"/>
+  </property>
+</bean>
+
+</beans>

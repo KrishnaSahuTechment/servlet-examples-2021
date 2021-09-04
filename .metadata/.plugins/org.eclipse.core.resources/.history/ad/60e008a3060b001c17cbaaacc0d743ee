@@ -1,0 +1,16 @@
+package com.casecadeOneToOne;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity  
+@Table(name="student111")  
+public class Student {
+
+	private int sId;  
+    private String sName;  
+    private int sAge;  
+	
+    
+    
+}

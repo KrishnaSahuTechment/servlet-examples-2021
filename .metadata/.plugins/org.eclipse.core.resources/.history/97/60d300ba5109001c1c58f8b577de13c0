@@ -1,0 +1,32 @@
+package com.techment;
+
+import org.hibernate.cfg.Configuration;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.mysql.cj.Query;
+import com.mysql.cj.xdevapi.SessionFactory;
+
+
+public class HQLSelect {
+
+	Configuration configuration = new Configuration();
+	configuration.configure("hibernate.cfg.xml");
+	
+	org.hibernate.SessionFactory sessionFactory = configuration.buildSessionFactory();
+	Session session = sessionFactory.openSession(); 
+	
+	Query<Student> query = session.createQuery("selecct s from Student s");
+	
+	List<Student> studentList = query.list();
+	
+	studentList.forEach(System.out::println);
+	Syso("===================");
+	
+	
+	
+}

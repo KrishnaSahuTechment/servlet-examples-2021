@@ -1,0 +1,39 @@
+package com.techment.assignment2;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+
+
+public class ManyToMany {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		EntityManagerFactory emf =Persistence.createEntityManagerFactory("s");
+		EntityManager em = emf.createEntityManager();
+		
+		em.getTransaction().begin();
+		
+		Book bk1 = new Book();
+		bk1.setBookId(1001);
+		bk1.setPrice(500);
+		bk1.setTitle("java");
+		
+		
+		Book bk2 = new Book();
+		bk2.setBookId(1002);
+		bk2.setPrice(500);
+		bk2.setTitle("HTML");
+		
+		Auther auther1 = new Auther();
+		auther1.setAutherId(1);
+		auther1.setFisrtName("krishna");
+		auther1.setMiddleName("kumar");
+		auther1.setLastName("sahu");
+		auther1.setPhoneNo("9522222892");
+		
+	}
+
+}

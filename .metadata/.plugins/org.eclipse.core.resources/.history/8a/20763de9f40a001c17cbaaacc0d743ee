@@ -1,0 +1,5 @@
+package com.techmentmanytoonebycolumn;
+
+public class Department {
+
+}

@@ -1,0 +1,26 @@
+package com.casecadeOneToOne;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity  
+@Table(name="student111")  
+public class Student {
+
+	private int sId;  
+    private String sName;  
+    private int sAge;
+    
+    @OneToOne(cascade=CascadeType.PERSIST)  
+    private Subject sub;  
+	
+    public Student() {
+		super();
+		// TODO Auto-generated constructor stub
+	}  
+	
+    
+    
+}
